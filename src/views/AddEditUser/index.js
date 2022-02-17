@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Box, Tab, Tabs } from "@material-ui/core";
 
 import { USER_TABS } from "../../Configs/configs";
+import UserBasicData from "./UserBasicDetail";
+import Experience from "./Experience";
+import Education from "./Education";
 
 const AddEditUser = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -21,22 +24,39 @@ const AddEditUser = () => {
     <>
       <Box
         sx={{ borderBottom: 1, borderColor: "divider" }}
-        style={{ width: "60%", margin: 0, justifyContent: "start" }}
+        style={{ width: "80%", margin: 0, justifyContent: "start" }}
       >
         <Tabs
           value={activeTab}
           onChange={handleChange}
           textColor="secondary"
           indicatorColor="secondary"
+          style={{
+            width: 600,
+            padding: "10px 15px",
+          }}
         >
           {Object.values(USER_TABS).map(({ label, value }, tabIndex) => {
-            return <Tab label={label} key={tabIndex} />;
+            return (
+              <Tab
+                label={label}
+                key={tabIndex}
+                style={{ minWidth: 100, width: 100 }}
+              />
+            );
           })}
         </Tabs>
       </Box>
-      <Box>
-        {activeTab == 0 && <h1>ACtive tab = 0</h1>}
-        {activeTab == 1 && <h1>ACtive tab = 1</h1>}
+      <Box
+        sx={{
+          width: 600,
+          height: 300,
+          padding: "10px 15px",
+        }}
+      >
+        {activeTab == 0 && <UserBasicData />}
+        {activeTab == 1 && <Education />}
+        {activeTab == 2 && <Experience />}
       </Box>
     </>
   );

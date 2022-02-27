@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-title {
+  color: white;
+  /* font-size: 80px; */
+  font-weight: 800;
+}
+
+.css-1j5luls-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0;
+}

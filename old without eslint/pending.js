@@ -1,0 +1,1 @@
+1. Disable backgraound events when drawer is opened
